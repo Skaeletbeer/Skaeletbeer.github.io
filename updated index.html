@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>My Web Page</title>
+</head>
+<body bgcolor=grey text=blue>
+Hello world, I am Skye...
+<div style="margin-left: auto; margin-right: auto; margin-top: 40px;
+    padding: 20px; width: 500px; font-size: 16px; font-family:'Segoe UI', sans-serif;">
+    Skye-Bot👧
+   
+   <div style=" margin-top:6px; padding: 20px; background-color: #E1F4FB;
+   border: 4px solid #8ec8df; border-radius: 25px;">
+
+    <form name="chatForm">
+        <p id="botSays">What is your name ? </p>
+        <br>         
+        <input type="text" name="userInput" >
+        <input type="button" value="Send" onClick="displayFeedback(this.form)">
+
+    </form>
+   </div>
+   </div>  
+
+<script>
+
+var counter=0;
+var totalQuestions=2;
+
+
+//create a list of the majors you are/ were interested in
+var majorInterestedList=["sociology", "anthropology", "biology", "neuroscience" ];
+var favrtistList= ["taylor swift", "noah kahan","olivia rodrigo","the weekend"];
+
+var userName;
+
+    function displayFeedback(form) {
+        counter++;
+
+        var feedbackText="";
+        var newQuestionText="";
+        var myMajor="architecture";
+
+        var userInput= form.userInput.value;
+
+        if (counter==1) {        
+            userName= userInput;
+            feedbackText="Hello, "+ userName+" ! " +"<br>Nice to meet you."+
+            " I am Skye, a firstyear at Mount Holyoke College.";
+
+            newQuestionText="Do you also attend Mount Holyoke College ?";              
+        }
+
+        
+        if (counter==2) {        
+            feedbackText="Cool. I'm majoring in " + myMajor; 
+            
+            newQuestionText=" whats your major? ";              
+        }
+        if (counter==3) {           
+            if (userInput.toLowerCase()== myMajor) feedbackText="Great! I am also majoring in "+ userInput+"."; 
+            
+            else {
+                feedbackText="I guess you must find "+userInput+" very interesting."+" I am majoring in "+myMajor;
+                for (let i = 0; i < majorInterestedList.length; i++) {      
+                    if (userInput.toLowerCase() == majorInterestedList[i]) {
+                        feedbackText= userInput+ " was one of the majors I was interested to pursue."+
+                        " I am now majoring in "+myMajor+".";
+                    }    
+                } 
+            }
+            newQuestionText="Whats your favorite musical artist?";       
+        }
+        if (counter==4) {         
+                for (let i = 0; i < favrtistList.length; i++) {      
+                    if (userInput.toLowerCase() == favrtistList[i]) {
+                        feedbackText="I Also like"+userInput+"!";
+                    } 
+                    else {
+                        for (let i = 0; i < favrtistList.length; i++) {      
+                            if (userInput.toLowerCase() != favrtistList[i]) {
+                                feedbackText=userInput+ " is great!!"+
+                                " One of my favorites is Taylor Swift!!";
+                            }    
+                        } 
+                    }   
+                }
+            
+        }
+
+
+        //update the feedback and clear the input box
+        document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+        form.userInput.value=""; 
+}
+
+</script>
+</body>
+<CENTER> <h1> Introduction! </h1> 
+<p> <font color=green>Basic information<p/> </CENTER>
+<h3> <font color=blue <u> What to know about Skye's life.</u> </h3> 
+<p> 
+<p>
+<font size=4><font color=green>
+Skye is a first-year at Mount Holyoke College. Skye is 18 years old. <br> She is so excited to meet you. Skye loves the color blue and going on hikes. She is from Arlington, Virginia. 
+<font color=red> &hearts; </font>
+</p> 
+<h3> <font color=blue <u>What to know about Skye's family</u> </h3>
+<p>
+<font size=4><font color=green>
+Skye has two parents and an older brother. She had lots of aunts and uncles as well as many cousins. They live all over the United States and abroad. Skye spends holidays and birthdays with them.  
+</p> 
+<a HREF="https://www.mtholyoke.edu">Click here for Mount Holyoke!</a>
+<br>
+<a HREF="https://apps.apple.com/us/app/instagram/id389801252?vt=lo">Click here to download Instagram!</a>
+<br>
+<a HREF="https://www.hydroflask.com/">Click here to buy a hydro Flask!</a>
+<CENTER> <h1> favorite things!! </h1> </CENTER> 
+<br>
+<p> <font color=blue>What are her favorite colors?<p/> 
+<ul>
+<li> blue</li>
+<li> yellow</li>
+<li> green</li>
+</ul>
+<p><font color=blue>What are her favorite things?<p/> 
+<table style="border: 1px solid purple; width:50%;">
+<tr>
+<th>Movies</th>
+<th>Books</th>
+<th>Friends</th>
+</tr> 
+<tr>
+<td>Dune:part 1</td>
+<td>ACOTAR</td>
+<td>Eliana</td>
+</tr>
+<tr>
+<td>Top Gun</td>
+<td>Chess and Mate</td>
+<td>Mary</td>
+</tr>
+</table>
+<br>
+<CENTER> <h1>Pretty Photos<font color=green> </h1> </CENTER> 
+<img SRC="lab4photo.jpg" width="550" height="600">
+<img SRC="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.jpg" width="550" height="600">
+
+<CENTER><audio controls>
+    <source src="lab4audio.mp3" type="audio/mpeg">
+</audio> </CENTER>
+<CENTER><video width="320" height="240" controls>
+    <source src="Lab4video.mp4" type="video/mp4">
+  </video></CENTER> 
+  <CENTER> <iframe width="560" height="315" src="https://www.youtube.com/embed/1WEeHcRPDXc?si=pOzldcYxC4mIIhEU" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe> </CENTER> 
+  <form>
+    <label for="fname"> first name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname"> Your favorite colors?:</label><br>
+    <input type="text" id="Your favorite colors?" name="Your favrotie colors?">
+    <input type="submit" value="Submit"><br>  
+  </form>
+  </html>
